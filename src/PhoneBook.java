@@ -11,8 +11,20 @@ public class PhoneBook {
         String name, phoneNumber;
 
         while(true){
+            System.out.print("Введите имя контакта или 'exit' для завершения: ");
+            name = scanner.nextLine();
+            if(name.equals("exit")){
+                break;
+            }
 
+            System.out.print("Введите телефонный номер: ");
+            phoneNumber = scanner.nextLine();
+
+            addContact(phoneBook, name, phoneNumber);
         }
+
+        System.out.println("\nТелефонная книга");
+        printPhoneBook();
 
         void addContact(HashMap<String, List<String>> phoneBook, String name, String phoneNumber){
 
